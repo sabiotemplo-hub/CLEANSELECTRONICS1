@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CLEANS ELECTRONIC — Gestión responsable de residuos electrónicos</title>
+  <meta name="description" content="Emprendimiento ambiental que retira, clasifica y dispone de forma segura equipos electrónicos en desuso. Cumplimiento ambiental, transparencia y certificado.">
+  <meta name="theme-color" content="#0a6c59">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#0f1720; --muted:#8fb6a6; --brand:#0a6c59; --brand-2:#1c7ed6;
+      --text:#e8f3ee; --text-dim:#cfe4db; --accent:#8ef5c4; --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:18px
+    }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:linear-gradient(160deg,#061017 0%,#0a1b23 40%,#0c2a2a 100%); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1180px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,15,20,.6);backdrop-filter:blur(8px);z-index:20;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .logo{width:40px;height:40px}
+    .chip{padding:8px 14px;border-radius:999px;background:rgba(142,245,196,.12);color:var(--accent);font-weight:600}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),#0aa386); color:#031a16;font-weight:800;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .btn:hover{transform:translateY(-1px);transition:.2s}
+    .btn--ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .btn--pdf{background:linear-gradient(135deg,#1c7ed6,#6ad1ff);color:#031a16}
+    .hero{padding:64px 0 36px}
+    .hero__grid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:6px 0 8px}
+    .hero p{color:var(--text-dim);margin:0 0 18px}
+    .badge-list{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px}
+    .card{background:linear-gradient(160deg,#0f1720,#0b1f1d);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card--glass{background:linear-gradient(180deg,rgba(15,23,32,.7),rgba(11,31,29,.45));backdrop-filter: blur(6px)}
+    .hero__art{padding:24px}
+    .hero__art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 30px rgba(0,0,0,.35))}
+    .section{padding:28px 0}
+    .section h2{font-size:clamp(22px,3vw,30px);margin:0 0 8px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+    .tile h3{margin:8px 0 6px}
+    .muted{color:var(--text-dim)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{padding:16px;border-radius:14px;background:linear-gradient(160deg,#0e1c20,#0d2422);border:1px solid rgba(255,255,255,.06)}
+    .step .num{width:32px;height:32px;display:inline-grid;place-items:center;border-radius:999px;background:linear-gradient(180deg,#0aa386,#0a6c59);color:#01251e;font-weight:900;margin-bottom:8px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .contact{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+    .contact .panel{padding:18px}
+    footer{padding:26px 0;color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .kpi{padding:16px;border-radius:14px;background:linear-gradient(160deg,#0d1c22,#0b1920);border:1px solid rgba(255,255,255,.06);text-align:center}
+    .kpi strong{display:block;font-size:26px;color:var(--accent)}
+    @media (max-width:980px){.hero__grid{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.grid-3{grid-template-columns:1fr}.process{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(28,126,214,.12)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:14px 0}
+    .whatsapp{background:linear-gradient(135deg,#25D366,#128C7E);color:#05251f}
+    .ghost{opacity:.85}
+    .nowrap{white-space:nowrap}
+    /* Clientes & aliados */
+    .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;align-items:center}
+    .logos img{width:100%;max-height:54px;object-fit:contain;opacity:.85;filter:grayscale(100%) contrast(105%);background:#0b1520;border-radius:12px;border:1px solid rgba(255,255,255,.06);padding:10px}
+    @media (max-width:980px){.logos{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:560px){.logos{grid-template-columns:repeat(2,1fr)}}
+    /* Testimonios */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .t{padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(160deg,#0f1720,#0b1f1d)}
+    .t .who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .t img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.15)}
+    @media (max-width:980px){.testimonials{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.testimonials{grid-template-columns:1fr}}
+    /* Botón flotante WhatsApp */
+    .wa-float{position:fixed;right:18px;bottom:18px;z-index:99;display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:linear-gradient(135deg,#25D366,#128C7E);color:#05251f;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+    .wa-float svg{width:20px;height:20px}
+    /* Formulario */
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form .row-1{display:grid;grid-template-columns:1fr;gap:12px}
+    label{font-weight:600}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#0b1520;color:var(--text)}
+    textarea{min-height:120px}
+    .small{font-size:.92rem;color:var(--text-dim)}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="CLEANS ELECTRONIC">
+        <!-- LOGO VECTORIAL INLINE -->
+        <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="Logo CLEANS ELECTRONIC">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#31e6a4"/><stop offset="100%" stop-color="#0a6c59"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1c7ed6"/><stop offset="100%" stop-color="#6ad1ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 38c10 2 18-2 26-10 4-4 8-8 14-10-2 8-6 14-10 18C34 44 24 50 12 50v-12z" fill="url(#g1)"/>
+          <path d="M38 12c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9z" fill="url(#g2)" opacity=".9"/>
+          <circle cx="38" cy="12" r="3" fill="#e6fbf3"/><circle cx="47" cy="21" r="3" fill="#e6fbf3"/><circle cx="29" cy="21" r="3" fill="#e6fbf3"/>
+          <path d="M38 15v6M41 21h6M35 21h-6" stroke="#e6fbf3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>CLEANS ELECTRONIC</span>
+        <span class="chip">Tecnología que renace con conciencia</span>
+      </div>
+      <div class="cta">
+        <a class="btn btn--ghost" href="#clientes" aria-label="Ir a clientes">Clientes</a>
+        <a class="btn btn--ghost" href="#testimonios" aria-label="Ir a testimonios">Testimonios</a>
+        <a class="btn btn--pdf" href="brochure-cleans-electronic.pdf" target="_blank" rel="noopener">Descargar Brochure (PDF)</a>
+        <a class="btn whatsapp" href="https://wa.me/573234616635?text=Hola%20CLEANS%20ELECTRONIC%2C%20quiero%20solicitar%20una%20recogida%20de%20equipos%20en%20desuso." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="tag">Emprendimiento ambiental serio</span>
+        <h1>Gestión responsable de <span class="nowrap">residuos electrónicos</span></h1>
+        <p>Retiramos, clasificamos y disponemos de forma segura tus equipos en desuso. Cumplimos la normatividad ambiental y entregamos soporte documental.</p>
+        <div class="badge-list">
+          <span class="chip">Retiro programado</span>
+          <span class="chip">Clasificación y trazabilidad</span>
+          <span class="chip">Disposición final autorizada</span>
+        </div>
+        <div class="cta">
+          <a class="btn whatsapp" href="https://wa.me/573234616635?text=Hola%20CLEANS%20ELECTRONIC%2C%20quisiera%20programar%20una%20recogida." target="_blank" rel="noopener">Solicita tu recogida</a>
+          <a class="btn btn--ghost" href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="card card--glass hero__art" aria-hidden="true">
+        <!-- Ilustración -->
+        <svg viewBox="0 0 800 520">
+          <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a6c59"/><stop offset="100%" stop-color="#1c7ed6"/></linearGradient></defs>
+          <rect x="0" y="0" width="800" height="520" rx="18" fill="url(#bg)" opacity=".18"/>
+          <g transform="translate(80,120)" fill="#8ef5c4" opacity=".9"><path d="M60 0l35 60H25L60 0zM0 120l35-60h70l35 60H0z" opacity=".3"/></g>
+          <g stroke="#9ed9ff" opacity=".6" stroke-width="3" fill="none">
+            <path d="M120 380h160v-80h120v-60h160"/>
+            <circle cx="120" cy="380" r="6" fill="#9ed9ff"/><circle cx="280" cy="300" r="6" fill="#9ed9ff"/>
+            <circle cx="400" cy="240" r="6" fill="#9ed9ff"/><circle cx="560" cy="240" r="6" fill="#9ed9ff"/>
+          </g>
+          <path d="M540 330c60-10 110-60 140-120-6 62-44 130-100 162-56 32-120 32-176 26 44-18 86-48 136-68z" fill="#31e6a4" opacity=".85"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>¿Qué hacemos?</h2>
+      <p class="muted">Somos un emprendimiento ambiental. Trabajamos con responsabilidad, transparencia y enfoque en la sostenibilidad.</p>
+      <div class="grid-3">
+        <div class="tile card"><h3>Retiro programado</h3><p class="muted">Vamos a tu empresa, colegio o entidad para recoger equipos en desuso con control de inventario.</p></div>
+        <div class="tile card"><h3>Clasificación y valorización</h3><p class="muted">Separamos lo recuperable para reuso/venta responsable y lo no recuperable para disposición segura.</p></div>
+        <div class="tile card"><h3>Disposición final autorizada</h3><p class="muted">Llevamos residuos a un parque ambiental con permisos, entregando soporte documental al cliente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="section">
+    <div class="container">
+      <h2>Cómo trabajamos</h2>
+      <div class="process">
+        <div class="step"><div class="num">1</div><strong>Contacto</strong><div class="muted">Agenda por WhatsApp o correo</div></div>
+        <div class="step"><div class="num">2</div><strong>Retiro</strong><div class="muted">En sitio y con control básico</div></div>
+        <div class="step"><div class="num">3</div><strong>Clasificación</strong><div class="muted">Reuso responsable y descarte</div></div>
+        <div class="step"><div class="num">4</div><strong>Soporte</strong><div class="muted">Entrega de constancias</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs / confianza -->
+  <section class="section">
+    <div class="container">
+      <h2>Compromiso y transparencia</h2>
+      <div class="kpis">
+        <div class="kpi"><strong>100%</strong><span class="muted">Enfoque ambiental</span></div>
+        <div class="kpi"><strong>+Traz.</strong><span class="muted">Trazabilidad básica</span></div>
+        <div class="kpi"><strong>Soporte</strong><span class="muted">Documental al cliente</span></div>
+        <div class="kpi"><strong>Local</strong><span class="muted">Emprendimiento serio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientes & aliados -->
+  <section id="clientes" class="section">
+    <div class="container">
+      <h2>Clientes y aliados</h2>
+      <p class="muted">Algunas organizaciones con las que hemos trabajado o buscamos alianzas.</p>
+      <div class="logos">
+        <img src="logos/cliente-1.png" alt="Cliente 1">
+        <img src="logos/cliente-2.png" alt="Cliente 2">
+        <img src="logos/cliente-3.png" alt="Cliente 3">
+        <img src="logos/cliente-4.png" alt="Cliente 4">
+        <img src="logos/cliente-5.png" alt="Cliente 5">
+        <img src="logos/cliente-6.png" alt="Cliente 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <h2>Testimonios</h2>
+      <div class="testimonials">
+        <div class="t">
+          <div class="who"><img src="testimonios/empresa-a.jpg" alt="Logo Empresa A"><strong>Empresa A</strong></div>
+          <p class="muted">“Servicio cumplido, retiro ágil y soporte ambiental entregado en tiempo. Recomendados.”</p>
+        </div>
+        <div class="t">
+          <div class="who"><img src="testimonios/uni-b.jpg" alt="Logo Universidad B"><strong>Universidad B</strong></div>
+          <p class="muted">“Aliado local serio; nos ayudaron a liberar bodegas y cumplir la norma.”</p>
+        </div>
+        <div class="t">
+          <div class="who"><img src="testimonios/colegio-c.jpg" alt="Logo Colegio C"><strong>Colegio C</strong></div>
+          <p class="muted">“Transparencia y buena comunicación durante todo el proceso.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto + Formulario (Netlify) -->
+  <section id="contacto" class="section">
+    <div class="container contact">
+      <div class="panel card">
+        <h2>Contáctanos</h2>
+        <p class="muted">¿Listo para liberar espacio y cumplir con la norma ambiental?</p>
+        <div class="cta">
+          <a class="btn whatsapp" href="https://wa.me/573234616635?text=Hola%20CLEANS%20ELECTRONIC%2C%20quiero%20programar%20una%20recogida." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="mailto:sabio_templo77@hotmail.com">Escríbenos</a>
+          <a class="btn btn--ghost" href="tel:+573234616635">Llámanos</a>
+          <a class="btn btn--pdf" href="brochure-cleans-electronic.pdf" target="_blank" rel="noopener">Descargar Brochure</a>
+        </div>
+      </div>
+
+      <div class="panel card">
+        <h3>Solicita tu recogida (Formulario)</h3>
+        <!-- Netlify Forms -->
+        <form name="contacto-cleans" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contacto-cleans">
+          <p class="small" style="display:none;">
+            <label>Si eres humano, deja este campo vacío: <input name="bot-field" /></label>
+          </p>
+          <div class="row">
+            <p><label>Nombre<br/><input type="text" name="nombre" required></label></p>
+            <p><label>Entidad/Empresa<br/><input type="text" name="empresa" required></label></p>
+          </div>
+          <div class="row">
+            <p><label>Correo<br/><input type="email" name="email" required></label></p>
+            <p><label>Teléfono<br/><input type="tel" name="telefono" required></label></p>
+          </div>
+          <div class="row-1">
+            <p><label>Mensaje / Lista de equipos<br/><textarea name="mensaje" placeholder="Cuéntanos qué equipos en desuso deseas gestionar" required></textarea></label></p>
+          </div>
+          <p><button class="btn" type="submit">Enviar solicitud</button></p>
+          <p class="small">Al enviar, autorizas el uso de tus datos solo para coordinar la recogida.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> CLEANS ELECTRONIC — Tecnología que renace con conciencia
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a class="wa-float" href="https://wa.me/573234616635?text=Hola%20CLEANS%20ELECTRONIC%2C%20quisiera%20programar%20una%20recogida." target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#05251f" d="M19.11 17.32c-.31-.16-1.8-.89-2.08-.99-.28-.1-.48-.16-.69.16-.2.31-.8.98-.98 1.18-.18.2-.36.23-.67.08-.31-.16-1.29-.47-2.46-1.49-.91-.81-1.53-1.81-1.71-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.2-.31.31-.52.1-.2.05-.39-.03-.54-.08-.16-.69-1.66-.95-2.28-.25-.6-.5-.51-.69-.52h-.6c-.2 0-.52.08-.79.39-.28.31-1.06 1.03-1.06 2.5s1.08 2.9 1.23 3.11c.16.2 2.12 3.24 5.13 4.54.72.31 1.28.49 1.72.62.72.23 1.38.2 1.9.12.58-.09 1.8-.74 2.06-1.46.25-.72.25-1.33.18-1.46-.07-.13-.28-.21-.59-.37z"/><path fill="#05251f" d="M27.27 4.73C24.41 1.88 20.54.28 16.46.28 8.23.28 1.55 6.96 1.55 15.19c0 2.69.7 5.32 2.02 7.63L.28 31.72l9.05-3.2c2.25 1.22 4.78 1.87 7.12 1.87h.01c8.23 0 14.91-6.68 14.91-14.91 0-3.98-1.61-7.85-4.46-10.75zm-10.56 24.7h-.01c-2.15 0-4.26-.58-6.1-1.68l-.44-.26-5.37 1.9 1.83-5.52-.29-.46c-1.24-1.99-1.9-4.28-1.9-6.64C4.87 8.18 10.02 3.04 16.45 3.04c3.3 0 6.4 1.28 8.74 3.61 2.34 2.34 3.62 5.45 3.62 8.75-.01 6.84-5.57 12.41-12.1 12.41z"/></svg>
+    WhatsApp
+  </a>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
